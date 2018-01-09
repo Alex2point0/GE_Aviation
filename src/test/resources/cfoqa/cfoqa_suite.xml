@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="cFOQA Viewer Tests" >
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter" />
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+    </listeners>
+
+    <test name="Upload_Flight">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.ge.ems.cfoqa.tests.uploadFlight.TestDataUpload" />
+            <class name="com.ge.ems.cfoqa.tests.uploadFlight.TestUploadSearch" />
+        </classes>
+    </test>
+
+    <test name="View_Upload" >
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="com.ge.ems.cfoqa.tests.viewUpload.TestStatusKey" />
+            <class name="com.ge.ems.cfoqa.tests.viewUpload.TestSuccessfulSingleFlightUpload" />
+        </classes>
+    </test>
+
+    <test name="View_Event" >
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="com.ge.ems.cfoqa.tests.viewEvent.TestEventSearch" />
+        </classes>
+    </test>
+
+    <test name="Context_View">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="com.ge.ems.cfoqa.tests.eventContext.TestEventInformation" />
+            <class name="com.ge.ems.cfoqa.tests.eventContext.TestFlightInformation" />
+        </classes>
+    </test>
+
+    <test name="Interaction_View">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="com.ge.ems.cfoqa.tests.eventInteraction.ConfirmViewerElements" />
+            <class name="com.ge.ems.cfoqa.tests.eventInteraction.TestEventInformation" />
+            <class name="com.ge.ems.cfoqa.tests.eventInteraction.TestFlightInformation" />
+        </classes>
+    </test>
+
+    <test name="Navigation" >
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="com.ge.ems.cfoqa.tests.navigation.TestNavigation" />
+        </classes>
+    </test>
+</suite>
+

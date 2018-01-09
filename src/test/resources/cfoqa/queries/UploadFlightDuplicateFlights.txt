@@ -1,0 +1,39 @@
+{
+    "select":[{
+        "fieldId":"[-hub-][field][[[ems-core][entity-type][foqa-flights]][[[ems-core][type-link][downloads * flights]]][[ems-core][base-field][download.collection-id]]]",
+        "aggregate":"none"
+    },{
+        "fieldId":"[-hub-][field][[[ems-core][entity-type][foqa-flights]][[duplicate-detection][base-field][duplicate-detection--master-]]]",
+        "aggregate":"count"
+    }],
+    "groupBy":[{
+        "fieldId":"[-hub-][field][[[ems-core][entity-type][foqa-flights]][[[ems-core][type-link][downloads * flights]]][[ems-core][base-field][download.collection-id]]]"
+    }],
+    "orderBy":[],
+    "distinct":true,
+    "format":"display",
+    "filter":{
+        "operator":"and",
+        "args":[{
+            "type":"filter",
+            "value":{
+                "operator":"in",
+                "args":[{
+                    "type":"field",
+                    "value":"[-hub-][field][[[ems-core][entity-type][foqa-flights]][[[ems-core][type-link][downloads * flights]]][[ems-core][base-field][download.collection-id]]]"
+                }--UPLOAD_ID_FILTER--]
+            }
+        },{
+            "type":"filter",
+            "value":{
+                "operator":"equal",
+                "args":[{
+                    "type":"field",
+                    "value":"[-hub-][field][[[ems-core][entity-type][foqa-flights]][[duplicate-detection][base-field][duplicate-detection--master-]]]"
+                },{
+                    "type":"constant","value":2
+                }]
+            }
+        }]
+    }
+}

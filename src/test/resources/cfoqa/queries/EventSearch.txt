@@ -1,0 +1,55 @@
+{
+    "select":[{
+        "fieldId":"[-hub-][field][[[ems-apm][entity-type][events:profile-a7483c449db94a449eb5f67681ee52b0]][[[ems-apm][type-link][flights * events:profile-a7483c449db94a449eb5f67681ee52b0]]][[ems-core][base-field][flight.uid]]]",
+        "aggregate":"none"
+    },{
+        "fieldId":"[-hub-][field][[[ems-apm][entity-type][events:profile-a7483c449db94a449eb5f67681ee52b0]][[[ems-apm][type-link][flights * events:profile-a7483c449db94a449eb5f67681ee52b0]][[ems-core][type-link][downloads * flights]]][[ems-core][base-field][download.date]]]",
+        "aggregate":"none"
+    },{
+        "fieldId":"[-hub-][field][[[ems-apm][entity-type][events:profile-a7483c449db94a449eb5f67681ee52b0]][[ems-apm][event-field][event-type:profile-a7483c449db94a449eb5f67681ee52b0]]]",
+        "aggregate":"none"
+    },{
+        "fieldId":"[-hub-][field][[[ems-apm][entity-type][events:profile-a7483c449db94a449eb5f67681ee52b0]][[[ems-apm][type-link][flights * events:profile-a7483c449db94a449eb5f67681ee52b0]]][[ems-core][base-field][flight.aircraft]]]",
+        "aggregate":"none"
+    },{
+        "fieldId":"[-hub-][field][[[ems-apm][entity-type][events:profile-a7483c449db94a449eb5f67681ee52b0]][[ems-apm][event-field][uid:profile-a7483c449db94a449eb5f67681ee52b0]]]",
+        "aggregate":"none"
+    },{
+        "fieldId":"[-hub-][field][[[ems-apm][entity-type][events:profile-a7483c449db94a449eb5f67681ee52b0]][[ems-apm][event-field][event-severity:profile-a7483c449db94a449eb5f67681ee52b0]]]",
+        "aggregate":"none"
+    }],
+    "groupBy":[],
+    "orderBy":[{
+        "fieldId":"[-hub-][field][[[ems-apm][entity-type][events:profile-a7483c449db94a449eb5f67681ee52b0]][[[ems-apm][type-link][flights * events:profile-a7483c449db94a449eb5f67681ee52b0]][[ems-core][type-link][downloads * flights]]][[ems-core][base-field][download.date]]]",
+        "order":"desc"
+    }],
+    "format":"display",
+    "filter":{
+        "operator":"and",
+        "args":[{
+            "type":"filter",
+            "value":{
+                "operator":"notEqual",
+                "args":[{
+                    "type":"field",
+                    "value":"[-hub-][field][[[ems-apm][entity-type][events:profile-a7483c449db94a449eb5f67681ee52b0]][[ems-apm][event-field][event-status:profile-a7483c449db94a449eb5f67681ee52b0]]]"
+                },{
+                    "type":"constant",
+                    "value":0
+                }]
+            }
+        },{
+            "type":"filter",
+            "value":{
+                "operator":"notEqual",
+                "args":[{
+                    "type":"field",
+                    "value":"[-hub-][field][[[ems-apm][entity-type][events:profile-a7483c449db94a449eb5f67681ee52b0]][[ems-apm][event-field][event-severity:profile-a7483c449db94a449eb5f67681ee52b0]]]"
+                },{
+                    "type":"constant",
+                    "value":0
+                }]
+            }
+        }]
+    }
+}

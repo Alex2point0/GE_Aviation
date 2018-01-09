@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="cFOQA View Upload Page Tests" >
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter" />
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+    </listeners>
+    
+    <test name="Functionality Tests">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.ge.ems.cfoqa.tests.viewUpload.TestStatusKey" />
+            <class name="com.ge.ems.cfoqa.tests.viewUpload.TestSuccessfulSingleFlightUpload" />
+        </classes>
+    </test>
+</suite>
